@@ -1,12 +1,9 @@
 
 pipeline {
     agent {
-        label 'docker'
+        label 'chatbot'
     }
-    environment {
-    	DOCKERHUB_CREDENTIALS = credentials('daniellosev-dockerhub')
-    	}
-    
+ 
     stages {
        stage('Build') {
           steps {
