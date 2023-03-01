@@ -36,10 +36,8 @@ pipeline {
     	  }
     	  
           steps { 
-          	dir('/home/ubuntu'){ 
 		sh 'kubectl apply -f yml-files/deployment.yml'
-		sh 'kubectl apply -f yml-files/service.yml'
-		}
+		sh 'kubectl apply -f yml-files/service.yml'		
           }
        }
 
