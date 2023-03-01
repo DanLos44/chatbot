@@ -32,7 +32,7 @@ pipeline {
        stage('Deploy') {
        
           agent {
-           label 'chatbot2'  	  
+           label 'chatbot2'  
     	  }
     	  
           steps { 
