@@ -24,7 +24,7 @@ pipeline {
     	  
           steps { 
              sh 'aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 342375422541.dkr.ecr.us-east-1.amazonaws.com'  
-             sh 'sudo docker tag b6d27809e125 342375422541.dkr.ecr.us-east-1.amazonaws.com/daniel_chatbot:chatbot-latest'	
+             sh 'sudo docker tag nltk-chatbot 342375422541.dkr.ecr.us-east-1.amazonaws.com/daniel_chatbot:chatbot-latest'	
              sh 'sudo docker push 342375422541.dkr.ecr.us-east-1.amazonaws.com/daniel_chatbot:chatbot-latest'
           }
        }
