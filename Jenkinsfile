@@ -12,8 +12,11 @@ pipeline {
     	  }
     	  
           steps { 
-             sh 'sudo docker build --tag nltk-chatbot -f Docker-files/Dockerfile'  	
+            dir('/home/ubuntu/workspace/newchatbot/Docker-files')
+             { 
+             sh 'sudo docker build --tag nltk-chatbot .'  	
           }
+       }
        }
        
        stage('Upload') {
