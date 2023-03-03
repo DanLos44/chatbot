@@ -9,13 +9,38 @@ Second agent downloads and runs the Docker image in a pod in AWS EKS.
 
 -- How to build --
 First of all make sure you have the folowing:
-- A git repo integrated with jenkins(webhook)
-- ECR private repository, you can make it public if you want to
-- Fully operational AWS EKS
-- Both agents integrated with your aws credentials
-- Second agent integrated with your EKS
+1) A git repo integrated with jenkins(webhook)
+you can visit this site for more info:
+https://www.blazemeter.com/blog/how-to-integrate-your-github-repository-to-your-jenkins-project
 
-After that just create a trigger to run the pipeline
+2)Install docker on both agents
+visit this site for more info:
+https://docs.docker.com/engine/install/ubuntu/
+
+3)ECR private repository, you can make it public if you want to
+visit this site for more info:
+https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html
+
+4)Fully operational AWS EKS
+visit this site for more info:
+https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html
+
+5)Install AWS cli on both agents
+visit this site for more info:
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+-- How to run --
+-If you want to run this project without a pipeline you can use the following commands:
+
+1)docker build --tag <image name> .
+
+2)aws ecr get-login-password --region <region> |docker login --username AWS --password-stdin <your ecr>
+
+3)docker tag <image name> <ecr repo>:<tag>
+
+4)docker push <ecr repo>
+
+-If not, create a trigger like a push event to start the pipeline automatic
 
 
 -- How to interact --
