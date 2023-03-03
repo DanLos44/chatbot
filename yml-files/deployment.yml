@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: 342375422541.dkr.ecr.us-east-1.amazonaws.com/daniel_chatbot:chatbot-latest
+          image: 342375422541.dkr.ecr.us-east-1.amazonaws.com/daniel_chatbot:latest
           ports:
             - containerPort: 8080
+          imagePullPolicy: Always
