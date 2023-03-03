@@ -12,10 +12,9 @@ pipeline {
     	  }
     	  
           steps { 
-            dir('/home/ubuntu/workspace/newchatbot/Docker-files')
+            dir('/home/ubuntu/workspace/newchatbot/src')
              { 
-             sh 'sudo docker build --tag nltk-chatbot .'  
-             sh 'ls -l'	
+             sh 'docker build --tag nltk-chatbot .'  	
           }
        }
        }
@@ -27,9 +26,9 @@ pipeline {
     	  }
     	  
           steps { 
-             sh 'aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 342375422541.dkr.ecr.us-east-1.amazonaws.com'  
-             sh 'sudo docker tag nltk-chatbot 342375422541.dkr.ecr.us-east-1.amazonaws.com/daniel_chatbot:latest'	
-             sh 'sudo docker push 342375422541.dkr.ecr.us-east-1.amazonaws.com/daniel_chatbot:latest'
+             sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 342375422541.dkr.ecr.us-east-1.amazonaws.com'  
+             sh 'docker tag nltk-chatbot 342375422541.dkr.ecr.us-east-1.amazonaws.com/daniel_chatbot:latest'	
+             sh 'docker push 342375422541.dkr.ecr.us-east-1.amazonaws.com/daniel_chatbot:latest'
           }
        }
        
@@ -40,8 +39,8 @@ pipeline {
     	  }
     	  
           steps { 
-		sh 'kubectl apply -f yml-files/deployment.yml'
-		sh 'kubectl apply -f yml-files/service.yml'	
+		sh 'kubectl apply -f eks-files/deployment.yml'
+		sh 'kubectl apply -f eks-files/service.yml'	
 		sh 'kubectl rollout restart deployment/chatbot'			
           }
        }
