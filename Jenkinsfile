@@ -39,7 +39,7 @@ pipeline {
     	  }
     	  
           steps { 
-          	sh 'kubectl rollout restart deployment/chatbot'
+          	sh 'kubectl rollout restart deployment/server-demo'
 		sh 'kubectl apply -f yml-files/deployment.yml'
 		sh 'kubectl apply -f yml-files/service.yml'		
           }
