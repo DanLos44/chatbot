@@ -14,7 +14,8 @@ pipeline {
           steps { 
             dir('/home/ubuntu/workspace/newchatbot/Docker-files')
              { 
-             sh 'sudo docker build --tag nltk-chatbot .'  	
+             sh 'sudo docker build --tag nltk-chatbot .'  
+             sh 'ls -l'	
           }
        }
        }
