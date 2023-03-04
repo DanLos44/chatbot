@@ -45,6 +45,6 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
 -- How to interact --
 The service type is a load balancer
-you can access it using this format:
+You can access it using this format:
 <your load balancer url>:443/chat
 
