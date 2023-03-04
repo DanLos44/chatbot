@@ -40,7 +40,8 @@ pipeline {
     	  
           steps { 
 		sh 'kubectl apply -f eks-files/pod.yml'
-		sh 'kubectl apply -f eks-files/service.yml'				
+		sh 'kubectl apply -f eks-files/service.yml'
+		sh 'kubectl delete pod chatbot'				
           }
        }
 
