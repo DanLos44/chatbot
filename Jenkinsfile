@@ -39,9 +39,9 @@ pipeline {
     	  }
     	  
           steps { 
-		sh 'kubectl apply -f eks-files/deployment.yml'
+		sh 'kubectl apply -f eks-files/pod.yml'
 		sh 'kubectl apply -f eks-files/service.yml'	
-		sh 'kubectl rollout restart deployment/chatbot'			
+		sh 'kubectl rollout restart pod/chatbot'			
           }
        }
 
