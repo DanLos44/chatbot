@@ -23,7 +23,8 @@ First of all make sure you have the folowing:
 3)ECR private repository, you can make it public if you want to
 
 4)Fully operational AWS EKS
-
+- You can visit this site on how to install EKS: https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html
+- 
 5)Install AWS cli on both agents
 - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 - unzip -u awscliv2.zip
