@@ -2,6 +2,7 @@ This project is based on the following git repository:
 https://github.com/cherdt/docker-nltk-chatbot
 
 -- General --
+
 It implements a pipeline in Jenkins using 2 agents that on each run:
 First agent compiles the source code and packages it to a docker image using docker engine.
 Uploads the image to an AWS ECR.
