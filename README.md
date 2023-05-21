@@ -41,13 +41,15 @@ How to run
 
 -If you want to run this project without a pipeline you can use the following commands:
 
-`docker build --tag <image name> .`
+```
+docker build --tag <image name> .`
 
 `aws ecr get-login-password --region <region> |docker login --username AWS --password-stdin <your ecr>`
 
 `docker tag <image name> <ecr repo>:<tag>`
 
-`docker push <ecr repo>`
+`docker push <ecr repo>
+```
 
 -If not, create a trigger like a push event to start the pipeline automatic
 
