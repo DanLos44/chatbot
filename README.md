@@ -27,13 +27,13 @@ First of all make sure you have the folowing:
 
 5)Install AWS cli on both agents
 ```
-- curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`
+- curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 
-`- unzip -u awscliv2.zip`
+- unzip -u awscliv2.zip
 
-`- sudo ./aws/install`
+- sudo ./aws/install
 
-`- aws --version
+- aws --version
 ```
 
 How to run
@@ -42,13 +42,13 @@ How to run
 -If you want to run this project without a pipeline you can use the following commands:
 
 ```
-docker build --tag <image name> .`
+docker build --tag <image name> .
 
-`aws ecr get-login-password --region <region> |docker login --username AWS --password-stdin <your ecr>`
+aws ecr get-login-password --region <region> |docker login --username AWS --password-stdin <your ecr>
 
-`docker tag <image name> <ecr repo>:<tag>`
+docker tag <image name> <ecr repo>:<tag>
 
-`docker push <ecr repo>
+docker push <ecr repo>
 ```
 
 -If not, create a trigger like a push event to start the pipeline automatic
